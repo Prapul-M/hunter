@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoJunk - Efficient Junk Removal, Eco-Friendly Solutions</title>
+    <title>Junk Hunter - Efficient Junk Removal, Eco-Friendly Solutions</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -31,6 +31,7 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             width: 90%;
             max-width: 500px;
+            animation: scaleIn 0.3s ease-out;
         }
         .close {
             color: #aaa;
@@ -246,7 +247,64 @@
         .view-services-btn:hover i {
             transform: translateX(5px);
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInFromLeft {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInFromRight {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInFromBottom {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Animation classes */
+        .animate-fadeIn { animation: fadeIn 1s ease-out; }
+        .animate-slideInLeft { animation: slideInFromLeft 1s ease-out; }
+        .animate-slideInRight { animation: slideInFromRight 1s ease-out; }
+        .animate-slideInBottom { animation: slideInFromBottom 1s ease-out; }
+        .animate-scaleIn { animation: scaleIn 0.5s ease-out; }
+
+        /* Delay classes */
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const animatedElements = document.querySelectorAll('.animate-fadeIn, .animate-slideInLeft, .animate-slideInRight, .animate-slideInBottom, .animate-scaleIn');
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.animation = 'none';
+                element.style.transition = 'none';
+            });
+
+            setTimeout(() => {
+                animatedElements.forEach(element => {
+                    element.style.opacity = '';
+                    element.style.animation = '';
+                    element.style.transition = '';
+                });
+            }, 100);
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -264,34 +322,34 @@
 
     <main>
         <section id="home">
-            <div class="hero">
+            <div class="hero animate-fadeIn">
                 <img src="/Users/prapul/Documents/GitHub/hunter/junk-removal-truck.jpg" alt="Junk Removal Truck">
-                <div class="hero-content">
+                <div class="hero-content animate-slideInBottom">
                     <h1>EcoJunk</h1>
                     <p>Efficient Junk Removal, Eco-Friendly Solutions</p>
                     <div class="cta-buttons">
-                        <button id="quoteBtn" class="cta-button">Get a Free Quote</button>
-                        <button id="scheduleBtn" class="cta-button">Schedule Pickup</button>
+                        <button id="quoteBtn" class="cta-button animate-scaleIn delay-200">Get a Free Quote</button>
+                        <button id="scheduleBtn" class="cta-button animate-scaleIn delay-300">Schedule Pickup</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="featured-services">
-            <h2>Our Featured Services</h2>
+        <section id="featured-services" class="animate-fadeIn">
+            <h2 class="animate-slideInLeft">Our Featured Services</h2>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card animate-slideInLeft delay-200">
                     <i class="fas fa-home"></i>
                     <h3>Residential Junk Removal</h3>
                     <p>We clear out homes, garages, and yards, ensuring your living space stays clutter-free.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card animate-slideInRight delay-300">
                     <i class="fas fa-building"></i>
                     <h3>Commercial Cleanouts</h3>
                     <p>Efficient removal of office furniture, equipment, and debris for businesses of all sizes.</p>
                 </div>
             </div>
-            <div class="button-container">
+            <div class="button-container animate-slideInBottom delay-400">
                 <a href="services.html" class="view-services-btn">
                     View All Services
                     <i class="fas fa-arrow-right"></i>
@@ -299,20 +357,20 @@
             </div>
         </section>
 
-        <section id="why-choose-us">
-            <h2>Why Choose EcoJunk?</h2>
+        <section id="why-choose-us" class="animate-fadeIn">
+            <h2 class="animate-slideInLeft">Why Choose EcoJunk?</h2>
             <div class="features-grid">
-                <div class="feature">
+                <div class="feature animate-slideInLeft delay-200">
                     <i class="fas fa-leaf"></i>
                     <h3>Eco-Friendly</h3>
                     <p>We prioritize recycling and responsible disposal methods.</p>
                 </div>
-                <div class="feature">
+                <div class="feature animate-slideInBottom delay-300">
                     <i class="fas fa-clock"></i>
                     <h3>Efficient</h3>
                     <p>Quick and hassle-free junk removal services.</p>
                 </div>
-                <div class="feature">
+                <div class="feature animate-slideInRight delay-400">
                     <i class="fas fa-dollar-sign"></i>
                     <h3>Affordable</h3>
                     <p>Competitive pricing with no hidden fees.</p>
