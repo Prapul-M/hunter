@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoJunk - Efficient Junk Removal, Eco-Friendly Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            overflow-y: auto;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 500px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #000;
+        }
+        .time-slot {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f0f0f0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .time-slot:hover {
+            background-color: #e0e0e0;
+        }
+        .time-slot.selected {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #quoteForm label {
+            display: block;
+            margin-top: 15px;
+        }
+        #quoteForm select,
+        #quoteForm input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        #quoteForm button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #quoteForm button:hover {
+            background-color: #45a049;
+        }
+        #quoteResult {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e7f3e8;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="hero">
+                <img src="images/junk-collection-hero.jpg" alt="Junk Collection in Progress">
+                <div class="hero-content">
+                    <h1>EcoJunk</h1>
+                    <p>Efficient Junk Removal, Eco-Friendly Solutions</p>
+                    <div class="cta-buttons">
+                        <button id="quoteBtn" class="cta-button">Get a Free Quote</button>
+                        <button id="scheduleBtn" class="cta-button">Schedule Pickup</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured-services">
+            <h2>Our Featured Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Residential Junk Removal</h3>
+                    <p>We clear out homes, garages, and yards, ensuring your living space stays clutter-free.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-building"></i>
+                    <h3>Commercial Cleanouts</h3>
+                    <p>Efficient removal of office furniture, equipment, and debris for businesses of all sizes.</p>
+                </div>
+            </div>
+            <a href="services.html" class="secondary-button">View All Services</a>
+        </section>
+
+        <section id="why-choose-us">
+            <h2>Why Choose EcoJunk?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Eco-Friendly</h3>
+                    <p>We prioritize recycling and responsible disposal methods.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-clock"></i>
+                    <h3>Efficient</h3>
+                    <p>Quick and hassle-free junk removal services.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h3>Affordable</h3>
+                    <p>Competitive pricing with no hidden fees.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 EcoJunk. All rights reserved.</p>
+    </footer>
+
+    <!-- Schedule Pickup Modal -->
+    <div id="scheduleModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Available Pickup Times</h2>
+            <p>Please select a convenient time for your junk pickup:</p>
+            <div id="availableTimes">
+                <!-- This will be populated dynamically -->
+            </div>
+            <button id="confirmSchedule" style="display:none;">Confirm Schedule</button>
+        </div>
+    </div>
+
+    <!-- Get a Free Quote Modal -->
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Get a Free Quote</h2>
+            <form id="quoteForm">
+                <label for="itemType">What type of items do you need removed?</label>
+                <select id="itemType" required>
+                    <option value="">Select an option</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="appliances">Appliances</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="yard-waste">Yard Waste</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="itemQuantity">How many items approximately?</label>
+                <input type="number" id="itemQuantity" min="1" required>
+
+                <label for="location">Where are the items located?</label>
+                <select id="location" required>
+                    <option value="">Select an option</option>
+                    <option value="inside">Inside the house</option>
+                    <option value="garage">In the garage</option>
+                    <option value="yard">In the yard</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <button type="submit">Get Quote</button>
+            </form>
+            <div id="quoteResult" style="display: none;">
+                <h3>Estimated Quote</h3>
+                <p id="quoteAmount"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Fade-in animation for sections
+        const sections = document.querySelectorAll('section');
+        const options = {
+            root: null,
+            threshold: 0.1,
+            rootMargin: "0px"
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 1s ease-out forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Modal functionality
+        const scheduleBtn = document.getElementById("scheduleBtn");
+        const quoteBtn = document.getElementById("quoteBtn");
+        const scheduleModal = document.getElementById("scheduleModal");
+        const quoteModal = document.getElementById("quoteModal");
+        const closeBtns = document.getElementsByClassName("close");
+
+        scheduleBtn.onclick = function() {
+            scheduleModal.style.display = "block";
+            populateAvailableTimes();
+        }
+
+        quoteBtn.onclick = function() {
+            quoteModal.style.display = "block";
+        }
+
+        for (let closeBtn of closeBtns) {
+            closeBtn.onclick = function() {
+                scheduleModal.style.display = "none";
+                quoteModal.style.display = "none";
+            }
+        }
+
+        window.onclick = function(event) {
+            if (event.target == scheduleModal || event.target == quoteModal) {
+                scheduleModal.style.display = "none";
+                quoteModal.style.display = "none";
+            }
+        }
+
+        function populateAvailableTimes() {
+            const availableTimes = [
+                "Monday, 9:00 AM - 11:00 AM",
+                "Monday, 2:00 PM - 4:00 PM",
+                "Tuesday, 10:00 AM - 12:00 PM",
+                "Wednesday, 1:00 PM - 3:00 PM",
+                "Thursday, 11:00 AM - 1:00 PM",
+                "Friday, 3:00 PM - 5:00 PM"
+            ];
+
+            const timesList = document.getElementById("availableTimes");
+            timesList.innerHTML = "";
+            availableTimes.forEach(time => {
+                const button = document.createElement("button");
+                button.textContent = time;
+                button.className = "time-slot";
+                button.onclick = function() {
+                    document.querySelectorAll('.time-slot').forEach(slot => slot.classList.remove('selected'));
+                    this.classList.add('selected');
+                    document.getElementById('confirmSchedule').style.display = 'block';
+                };
+                timesList.appendChild(button);
+            });
+        }
+
+        document.getElementById('confirmSchedule').onclick = function() {
+            const selectedTime = document.querySelector('.time-slot.selected');
+            if (selectedTime) {
+                alert(`You have scheduled a pickup for ${selectedTime.textContent}`);
+                scheduleModal.style.display = "none";
+            } else {
+                alert("Please select a time slot");
+            }
+        };
+
+        document.getElementById("quoteForm").onsubmit = function(e) {
+            e.preventDefault();
+            const itemType = document.getElementById("itemType").value;
+            const itemQuantity = document.getElementById("itemQuantity").value;
+            const location = document.getElementById("location").value;
+
+            // This is a very basic quote calculation. You should replace this with your actual pricing logic.
+            let basePrice = 50;
+            if (itemType === "furniture" || itemType === "appliances") basePrice += 30;
+            if (location === "inside" || location === "garage") basePrice += 20;
+            const totalPrice = basePrice * itemQuantity;
+
+            document.getElementById("quoteAmount").textContent = `$${totalPrice}`;
+            document.getElementById("quoteResult").style.display = "block";
+        }
+    </script>
+</body>
+</html>

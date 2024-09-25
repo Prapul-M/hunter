@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - EcoJunk</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contact-intro">
+            <h1>Contact Us</h1>
+            <p class="tagline">Let's Clear the Clutter Together</p>
+            <p class="sub-tagline">Your Junk, Our Mission: A Cleaner World Awaits</p>
+            <p>At EcoJunk, we're committed to providing top-notch junk removal services while prioritizing environmental sustainability. Whether you have a question, need a quote, or want to schedule a pickup, we're here to help. Reach out to us today and take the first step towards a clutter-free space!</p>
+        </section>
+
+        <section id="contact-info">
+            <h2>Get in Touch</h2>
+            <p class="tagline">Your Eco-Friendly Cleanup is Just a Message Away</p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Call Us</h3>
+                    <p>(555) 123-4567</p>
+                    <p>Mon-Fri: 8am-6pm</p>
+                    <p>Sat: 9am-3pm</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p>info@ecojunk.com</p>
+                    <p>quotes@ecojunk.com</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Visit Us</h3>
+                    <p>123 Green Street</p>
+                    <p>Eco City, EC 12345</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="quote-form">
+            <h2>Get a Free Quote</h2>
+            <p class="tagline">From Mess to Success: Your Journey Starts Here</p>
+            <p>Ready to declutter? Fill out the form below, and we'll get back to you with a free, no-obligation quote for our services.</p>
+            <form action="#" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Needed</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select a service</option>
+                        <option value="residential">Residential Junk Removal</option>
+                        <option value="commercial">Commercial Cleanout</option>
+                        <option value="recycling">Recycling Services</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Get Quote</button>
+            </form>
+        </section>
+
+        <section id="map">
+            <h2>Our Location</h2>
+            <p>We serve the greater Eco City area. Visit our office or give us a call to learn more about our service coverage.</p>
+            <div class="map-container">
+                <!-- Replace with actual map embed code -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968459391!3d40.74844797932841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1616562128215!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
